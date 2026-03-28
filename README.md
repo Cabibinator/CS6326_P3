@@ -15,6 +15,7 @@ ATTENTION: Run this in three terminals using:
 - TERMINAL 2:
 ```
 --> py -m venv .venv
+--> (OR Path to python311 if different ver in PATH) -m venv .venv
 --> .venv/Scripts/activate
 --> pip install -r requirements.txt
 --> flask --app modelconnection run --port 5000

@@ -17,7 +17,7 @@ if not os.path.exists(MODEL_PATH):
 # Load model ONCE (important)
 model = tf.keras.models.load_model(MODEL_PATH)
 
-IMG_SIZE = (256, 256)
+IMG_SIZE = (64, 64)
 
 def preprocess_image(image):
     image = image.resize(IMG_SIZE)
@@ -51,6 +51,8 @@ def predict():
         return jsonify({
             "prediction": predicted_class,
             "raw": prediction.tolist(),
+            "min":processed.min(),
+            "max":processed.max(),
         })
     except Exception as ex:
         tb = traceback.format_exc()
